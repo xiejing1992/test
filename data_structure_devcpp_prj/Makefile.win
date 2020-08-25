@@ -1,0 +1,49 @@
+# Project: DataStructure
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o SeqList/SeqList.o LinkList/LinkList.o CircleList/CircleList.o DLinkList/DLinkList.o Stack/Stack.o Queue/Queue.o nLenQueue/nLenQueue.o
+LINKOBJ  = main.o SeqList/SeqList.o LinkList/LinkList.o CircleList/CircleList.o DLinkList/DLinkList.o Stack/Stack.o Queue/Queue.o nLenQueue/nLenQueue.o
+LIBS     = -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/4_exercise/data_structure/dev_cpp/SeqList" -I"D:/4_exercise/data_structure/dev_cpp/LinkList" -I"D:/4_exercise/data_structure/dev_cpp/CircleList" -I"D:/4_exercise/data_structure/dev_cpp/DLinkList" -I"D:/4_exercise/data_structure/dev_cpp/Stack" -I"D:/4_exercise/data_structure/dev_cpp/Queue"
+CXXINCS  = -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"D:/4_exercise/data_structure/dev_cpp/SeqList" -I"D:/4_exercise/data_structure/dev_cpp/LinkList" -I"D:/4_exercise/data_structure/dev_cpp/CircleList" -I"D:/4_exercise/data_structure/dev_cpp/DLinkList" -I"D:/4_exercise/data_structure/dev_cpp/Stack" -I"D:/4_exercise/data_structure/dev_cpp/Queue"
+BIN      = DataStructure.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+SeqList/SeqList.o: SeqList/SeqList.c
+	$(CC) -c SeqList/SeqList.c -o SeqList/SeqList.o $(CFLAGS)
+
+LinkList/LinkList.o: LinkList/LinkList.c
+	$(CC) -c LinkList/LinkList.c -o LinkList/LinkList.o $(CFLAGS)
+
+CircleList/CircleList.o: CircleList/CircleList.c
+	$(CC) -c CircleList/CircleList.c -o CircleList/CircleList.o $(CFLAGS)
+
+DLinkList/DLinkList.o: DLinkList/DLinkList.c
+	$(CC) -c DLinkList/DLinkList.c -o DLinkList/DLinkList.o $(CFLAGS)
+
+Stack/Stack.o: Stack/Stack.c
+	$(CC) -c Stack/Stack.c -o Stack/Stack.o $(CFLAGS)
+
+Queue/Queue.o: Queue/Queue.c
+	$(CC) -c Queue/Queue.c -o Queue/Queue.o $(CFLAGS)
+
+nLenQueue/nLenQueue.o: nLenQueue/nLenQueue.c
+	$(CC) -c nLenQueue/nLenQueue.c -o nLenQueue/nLenQueue.o $(CFLAGS)
